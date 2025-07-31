@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTDP链式时延协议 & Momentum项目 - 科学的自制力解决方案</title>
+    <meta name="description" content="基于数学模型的自制力训练工具，通过神圣座位原理、下必为例原理和线性时延原理帮助用户建立强大的习惯链条">
+    <meta name="keywords" content="CTDP,链式时延协议,Momentum,自制力,专注力,习惯养成,拖延症">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CTDP链式时延协议 & Momentum项目">
+    <meta property="og:description" content="科学的自制力解决方案，基于数学模型的专注力训练工具">
+    
+    <!-- Twitter -->
+    <meta name="twitter:title" content="CTDP链式时延协议 & Momentum项目">
+    <meta name="twitter:description" content="科学的自制力解决方案，基于数学模型的专注力训练工具">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    
+    <!-- MathJax for math formula rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer theme {
+            :root {
+                --primary-color: #6366f1;
+                --primary-dark: #4f46e5;
+                --secondary-color: #f8fafc;
+                --text-primary: #1e293b;
+                --text-secondary: #64748b;
+                --border-color: #e2e8f0;
+                --card-bg: #ffffff;
+                --shadow-color: rgba(0, 0, 0, 0.1);
+            }
+            
+            .dark {
+                --primary-color: #818cf8;
+                --primary-dark: #6366f1;
+                --secondary-color: #0f172a;
+                --text-primary: #f1f5f9;
+                --text-secondary: #94a3b8;
+                --border-color: #334155;
+                --card-bg: #1e293b;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        @layer base {
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                background-color: var(--secondary-color);
+                color: var(--text-primary);
+                transition: all 0.3s ease;
+            }
+        }
+
+        @layer components {
+            .slide {
+                min-height: 100vh;
+                scroll-snap-align: start;
+                transition: all 0.6s ease;
+            }
+            
+            .card {
+                background: var(--card-bg);
+                border: 1px solid var(--border-color);
+                box-shadow: 0 4px 6px var(--shadow-color);
+                transition: all 0.3s ease;
+            }
+            
+            .card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px var(--shadow-color);
+            }
+            
+            .btn-primary {
+                background: var(--primary-color);
+                color: white;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-primary:hover {
+                background: var(--primary-dark);
+                transform: scale(1.02);
+            }
+            
+            .fade-in {
+                animation: fadeIn 0.8s ease-in-out;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+
+        @layer utilities {
+            .text-gradient {
+                background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <div id="root"></div>
+    
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/HeroSlide.js"></script>
+    <script type="text/babel" src="components/TheorySlide.js"></script>
+    <script type="text/babel" src="components/PrinciplesSlide.js"></script>
+    <script type="text/babel" src="components/MomentumSlide.js"></script>
+    <script type="text/babel" src="components/DemoSlide.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
